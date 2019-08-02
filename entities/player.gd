@@ -12,7 +12,7 @@ func _ready():
 func get_input():
 	var velocity = Vector2()
 	
-	if Input.is_action_pressed('ui_left_click'):
+	if Input.is_action_just_pressed('ui_left_click'):
 		shoot()
 	
 	if Input.is_action_pressed('ui_right'):

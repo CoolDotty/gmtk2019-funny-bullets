@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/icon.png" type="Texture" id=3]
-[ext_resource path="res://entities/bullet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0524, 32.119 )
@@ -17,10 +16,6 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-disabled = true
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 120, 0 )
-
-[node name="Sprite" type="Sprite" parent="Muzzle"]
-texture = ExtResource( 4 )
