@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/icon.png" type="Texture" id=2]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/shotgun_pump.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0524, 32.119 )
@@ -23,3 +24,6 @@ reload_delay = 0.2
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 45, 0 )
+
+[node name="SoundRack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
