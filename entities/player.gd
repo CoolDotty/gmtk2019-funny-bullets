@@ -8,6 +8,7 @@ export (PackedScene) var Fake
 const speed = 500;
 onready var clipazine = get_parent()
 onready var Gun = $Gun
+onready var dead = false
 
 func _ready():
 	Gun.clipazine = clipazine
@@ -42,10 +43,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 func hit():
-	hide()  # Player disappears after being hit.
-	emit_signal("killed")
-	$CollisionShape2D.set_deferred("disabled", true)
-
-func stop():
-	# spawn dead guy
-	queue_free()
+	if not dead:
+		dead = true
+		hide()  # Player disappears after being hit.
+		$CollisionShape2D.set_deferred("disabled", true)
+		Global.death_count += 1
+		# spawn dead guy
+		emit_signal("killed")
+		queue_free()
