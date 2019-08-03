@@ -1,7 +1,6 @@
 extends Node
 
 signal push_bullet
-signal push_bullet_front
 signal pop_bullet
 
 export (AudioStream) var sound_reload
@@ -10,6 +9,10 @@ var clipazine = [];
 
 func _ready():
 	pass
+
+func _physics_process(delta):
+	if Input.is_action_pressed('ui_restart'):
+		get_tree().reload_current_scene()
 
 # Returns an instance of a bullet or Null
 func pop(who):
@@ -37,4 +40,9 @@ func empty():
 	return clipazine.empty()
 
 func game_over():
-	pass
+	for c in get_children():
+		if c.has_method("stop"):
+			c.stop()
+
+func _on_player_killed():
+	game_over()

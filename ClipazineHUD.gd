@@ -3,7 +3,6 @@ extends Node2D
 func _ready():
 	var levelInstance = get_parent().get_parent()
 	levelInstance.connect("push_bullet", self, "push_bullet")
-	levelInstance.connect("push_bullet_front", self, "push_bullet_front")
 	levelInstance.connect("pop_bullet", self, "pop_bullet")
 
 func push_bullet(bullet):

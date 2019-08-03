@@ -7,6 +7,8 @@ onready var Player = $"../player"
 onready var clipazine = get_parent()
 onready var Gun = $Gun
 
+var stopped = false;
+
 var gun_has_my_ammo = false
 var walk_target = null
 
@@ -14,6 +16,9 @@ func _ready():
 	Gun.clipazine = clipazine
 
 func _physics_process(delta):
+	if stopped:
+		return
+	
 	var space_state = get_world_2d().direct_space_state
 	var player_pos = Player.global_position
 	var ignored = [self, Player]
@@ -36,6 +41,7 @@ func move_to(target_pos):
 	var dir = target_pos - global_position
 	rotation = dir.angle()
 	var velocity = Vector2(speed, 0).rotated(rotation)
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 
 func player_spotted_at(player_pos):
@@ -48,11 +54,14 @@ func shoot():
 	if gun_has_my_ammo:
 		var bullet = Gun.next_shot()
 		var shoot = Gun.shoot()
-		if (shoot == Gun.SHOT):
+		if (shoot == Gun.SHOT or shoot == Gun.MAGAZINE_EMPTY):
 			gun_has_my_ammo = false
 	else:
 		if Gun.reload(AmmoType) == Gun.RELOADED:
 			gun_has_my_ammo = true
+
+func stop():
+	stopped = true;
 
 func hit():
 	queue_free()

@@ -46,3 +46,6 @@ func hit():
 	emit_signal("killed")
 	$CollisionShape2D.set_deferred("disabled", true)
 
+func stop():
+	# spawn dead guy
+	queue_free()
