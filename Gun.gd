@@ -2,42 +2,44 @@ extends Node2D
 
 export (NodePath) var MuzzlePath
 
-export var pump_delay = 1;
+export var shoot_delay = 0.75;
+export var reload_delay = 0.25;
 
-onready var chamber = null
 onready var timer = $Timer
 onready var muzzle = get_node(MuzzlePath)
 var clipazine
 
-enum {MAGAZINE_EMPTY, ALREADY_RACKING, STARTED_RACKING}
+enum {MAGAZINE_EMPTY, RACKING, SHOT, RELOADED}
 
 func _ready():
 	pass # Replace with function body.
 
 # returns whether a bullet was fired
-func shoot() -> bool:
-	if chamber and timer.time_left == 0:
-		chamber.start(muzzle.global_position, get_parent().rotation)
-		clipazine.add_child(chamber)
-		
-		chamber = null
-		return true
-	else:
-		return false
-
-# returns whether attempting to load a shell succeeded (magazine is empty)
-func rack():
+func shoot():
 	if timer.time_left == 0:
-		if chamber:
-			chamber.queue_free()
-		
-		chamber = clipazine.pop(self)
-		if not chamber:
-			return MAGAZINE_EMPTY
-		
-		timer.set_wait_time(pump_delay)
+		var chamber = clipazine.pop(self)
+		timer.set_wait_time(shoot_delay)
 		timer.start()
-		
-		return STARTED_RACKING
+		if chamber:
+			chamber.start(muzzle.global_position, get_parent().rotation)
+			clipazine.add_child(chamber)
+			
+			chamber = null
+			return SHOT
+		else:
+			return MAGAZINE_EMPTY
 	else:
-		return ALREADY_RACKING
+		return RACKING
+
+func reload(ammo):
+	if timer.time_left == 0:
+		clipazine.push(ammo.instance())
+		timer.set_wait_time(reload_delay)
+		timer.start()
+		return RELOADED
+	else:
+		return RACKING
+
+func is_chambered():
+	return not clipazine.empty()
+	

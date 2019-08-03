@@ -20,11 +20,11 @@ func _physics_process(delta):
 		rotation = dir.angle()
 		shoot()
 
-func shoot(): 
-	if not Gun.shoot():
-		var gun_state = Gun.rack();
-		if gun_state == Gun.MAGAZINE_EMPTY:
-			clipazine.push(AmmoType.instance())
+func shoot():
+	if Gun.is_chambered():
+		Gun.shoot()
+	else:
+		Gun.reload(AmmoType)
 
 func hit():
 	queue_free()

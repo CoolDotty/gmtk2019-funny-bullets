@@ -17,3 +17,6 @@ func pop(who):
 func push(bullet_instance): # instance of scene
 	emit_signal("push_bullet", bullet_instance)
 	clipazine.push_back(bullet_instance)
+
+func empty():
+	return clipazine.empty()
