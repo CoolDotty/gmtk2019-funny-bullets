@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/enemy.gd" type="Script" id=1]
+[ext_resource path="res://entities/bullets/lethal/Lethal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/evil_icon.png" type="Texture" id=3]
+[ext_resource path="res://Gun.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+AmmoType = ExtResource( 2 )
+
+[node name="evil_icon" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 4.00097, 3.99505 )
+shape = SubResource( 1 )
+
+[node name="Gun" parent="." instance=ExtResource( 4 )]
+MuzzlePath = NodePath("../Muzzle")
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 78.2531, 0 )
+scale = Vector2( -85.6951, 1 )
