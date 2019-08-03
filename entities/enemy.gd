@@ -6,6 +6,8 @@ onready var Player = $"../player"
 onready var clipazine = get_parent()
 onready var Gun = $Gun
 
+var gun_has_my_ammo = false
+
 func _ready():
 	Gun.clipazine = clipazine
 
@@ -21,10 +23,14 @@ func _physics_process(delta):
 		shoot()
 
 func shoot():
-	if Gun.is_chambered():
-		Gun.shoot()
+	if gun_has_my_ammo:
+		var bullet = Gun.next_shot()
+		var shoot = Gun.shoot()
+		if (shoot == Gun.SHOT):
+			gun_has_my_ammo = false
 	else:
-		Gun.reload(AmmoType)
+		if Gun.reload(AmmoType) == Gun.RELOADED:
+			gun_has_my_ammo = true
 
 func hit():
 	queue_free()

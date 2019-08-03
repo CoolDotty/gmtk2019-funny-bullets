@@ -3,6 +3,9 @@ extends Node2D
 export var speed = 750
 var velocity = Vector2()
 
+func type():
+	return "fake"
+
 func start(pos, dir):
 	set_global_position(pos)
 	rotation = dir

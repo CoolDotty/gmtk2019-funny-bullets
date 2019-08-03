@@ -3,6 +3,9 @@ extends Area2D
 export var speed = 2000
 var velocity = Vector2()
 
+func type():
+	return "lethal"
+
 func start(pos, dir):
 	set_global_position(pos)
 	rotation = dir

@@ -1,6 +1,7 @@
 extends Node
 
 signal push_bullet
+signal push_bullet_front
 signal pop_bullet
 
 var clipazine = [];
@@ -13,6 +14,11 @@ func pop(who):
 	var b = clipazine.pop_front()
 	emit_signal("pop_bullet", b, who)
 	return b
+
+func peek():
+	if not clipazine.empty():
+		return clipazine[0]
+	return null
 
 func push(bullet_instance): # instance of scene
 	emit_signal("push_bullet", bullet_instance)

@@ -40,6 +40,14 @@ func reload(ammo):
 	else:
 		return RACKING
 
+func rack():
+	var out = clipazine.pop(self)
+	if out:
+		out.queue_free()
+
+func next_shot():
+	return clipazine.peek()
+
 func is_chambered():
 	return not clipazine.empty()
 	
