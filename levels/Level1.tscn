@@ -34,24 +34,32 @@ position = Vector2( 457.453, 432.121 )
 scale = Vector2( -19.4533, -1.4959 )
 
 [node name="Wall3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 771.352, 573.511 )
-scale = Vector2( -0.992219, 18.0289 )
+position = Vector2( 385.524, 249.855 )
+scale = Vector2( -11, -1.496 )
+
+[node name="Wall7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 681.619, 248.458 )
+scale = Vector2( -8, -1.496 )
 
 [node name="Wall5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 272.745, 567.035 )
-scale = Vector2( -0.992219, 18.0289 )
+position = Vector2( 268.428, 351.188 )
+scale = Vector2( -1.27175, 40.3272 )
+
+[node name="Wall6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 767.035, 351.188 )
+scale = Vector2( -1.27175, 40.3272 )
 
 [node name="Enemy" parent="." instance=ExtResource( 7 )]
 position = Vector2( 547.518, 516.653 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 375, 272.743 )
+position = Vector2( 411.694, 361.24 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 451.807, 277.469 )
+position = Vector2( 333.091, 197.542 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 547.571, 270.102 )
+position = Vector2( 700.822, 196.586 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
