@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/bullets/fake/fake.gd" type="Script" id=1]
 [ext_resource path="res://entities/bullets/fake/particle.png" type="Texture" id=2]
 [ext_resource path="res://entities/bullets/fake/funny.png" type="Texture" id=3]
+[ext_resource path="res://sounds/shotgun_fake.wav" type="AudioStream" id=4]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -32,3 +33,7 @@ texture = ExtResource( 2 )
 [node name="HUDIcon" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

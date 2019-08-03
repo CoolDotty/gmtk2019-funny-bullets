@@ -20,4 +20,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Bullet_body_entered(body):
 	if body.has_method("hit"):
 		body.hit()
+	visible = false
+	$CollisionShape2D.queue_free()
+	yield($AudioStreamPlayer2D, "finished")
 	call_deferred("queue_free")

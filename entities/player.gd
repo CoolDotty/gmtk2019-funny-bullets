@@ -18,7 +18,6 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ui_rack"):
 		Gun.rack()
-		# Gun.rack()
 	
 	if Input.is_action_just_pressed('ui_load_fake'):
 		clipazine.push(Fake.instance())
