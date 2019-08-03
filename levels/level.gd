@@ -26,3 +26,6 @@ func push(bullet_instance): # instance of scene
 
 func empty():
 	return clipazine.empty()
+
+func game_over():
+	pass

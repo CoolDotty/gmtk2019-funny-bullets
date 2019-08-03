@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal killed
+
 export (PackedScene) var Lethal
 export (PackedScene) var Fake
 
@@ -37,3 +39,9 @@ func _physics_process(delta):
 	var dir = get_global_mouse_position() - global_position
 	rotation = dir.angle()
 	velocity = move_and_slide(velocity)
+	
+func hit():
+	hide()  # Player disappears after being hit.
+	emit_signal("killed")
+	$CollisionShape2D.set_deferred("disabled", true)
+
