@@ -12,14 +12,13 @@ func push_bullet(bullet):
 	
 	var spr = Sprite.new()
 	spr.texture = tex
-	spr.position = Vector2(-tex.get_width(), tex.get_height() * get_child_count())
+	spr.position = Vector2(-tex.get_width(), -(tex.get_height() * get_child_count()))
 	add_child(spr)
-	
-	position -= Vector2(0, tex.get_height())
 
 func pop_bullet(b, who):
 	if (get_child_count() == 0):
 		return
-	var out = get_child(get_child_count() - 1)
+	var out = get_child(0)
 	out.queue_free()
-	position += Vector2(0, out.texture.get_height())
+	for c in get_children():
+		c.position -= Vector2(0, -out.texture.get_height())

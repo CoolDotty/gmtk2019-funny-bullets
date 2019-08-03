@@ -12,7 +12,7 @@
 script = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 932, 537 )
+position = Vector2( 838.692, 367.572 )
 scale = Vector2( 1.01408, 1 )
 Lethal = ExtResource( 3 )
 Fake = ExtResource( 4 )
@@ -30,9 +30,15 @@ position = Vector2( 611.625, 327.445 )
 scale = Vector2( -0.992219, 18.0289 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 77, 51 )
+position = Vector2( 261.161, 269.537 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 375, 231 )
+position = Vector2( 375, 272.743 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 451.807, 277.469 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 547.571, 270.102 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]

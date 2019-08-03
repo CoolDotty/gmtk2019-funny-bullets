@@ -21,6 +21,7 @@ shape = SubResource( 1 )
 
 [node name="Gun" parent="." instance=ExtResource( 4 )]
 MuzzlePath = NodePath("../Muzzle")
+reload_delay = 0.5
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 78.2531, 0 )

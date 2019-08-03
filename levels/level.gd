@@ -10,7 +10,7 @@ func _ready():
 
 # Returns an instance of a bullet or Null
 func pop(who):
-	var b = clipazine.pop_back()
+	var b = clipazine.pop_front()
 	emit_signal("pop_bullet", b, who)
 	return b
 

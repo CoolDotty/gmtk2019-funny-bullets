@@ -23,9 +23,6 @@ func get_input():
 	if Input.is_action_just_pressed('ui_load_fake'):
 		clipazine.push(Fake.instance())
 	
-	if Input.is_action_just_pressed('ui_load_lethal'):
-		clipazine.push(Lethal.instance())
-	
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1
 	if Input.is_action_pressed('ui_left'):
