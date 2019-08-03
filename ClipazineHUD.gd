@@ -25,7 +25,7 @@ func pop_bullet(b, who):
 	out.queue_free()
 
 func _process(delta):
-	var i = 0
+	var i = 1
 	for c in get_children():
 		c.position.x = -c.texture.get_width()
 		c.position.y = -(i * c.texture.get_height())
