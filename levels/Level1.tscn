@@ -16,50 +16,34 @@ script = ExtResource( 1 )
 sound_reload = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 577.065, 655.029 )
+position = Vector2( 602.966, 85.1926 )
 scale = Vector2( 1.01408, 1 )
 Lethal = ExtResource( 4 )
 Fake = ExtResource( 5 )
 
 [node name="Wall" parent="." instance=ExtResource( 6 )]
-position = Vector2( 587.218, 579.902 )
-scale = Vector2( 19.0682, -1.35323 )
-
-[node name="Wall4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 513.83, 739.628 )
-scale = Vector2( 25.3581, -1.35323 )
+position = Vector2( 494.404, 159 )
+scale = Vector2( 31.6553, 1 )
 
 [node name="Wall2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 457.453, 432.121 )
-scale = Vector2( -19.4533, -1.4959 )
+position = Vector2( 172.535, 326.356 )
+scale = Vector2( 1, 17.9723 )
 
 [node name="Wall3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 385.524, 249.855 )
-scale = Vector2( -11, -1.496 )
-
-[node name="Wall7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 681.619, 248.458 )
-scale = Vector2( -8, -1.496 )
-
-[node name="Wall5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 268.428, 351.188 )
-scale = Vector2( -1.27175, 40.3272 )
-
-[node name="Wall6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 767.035, 351.188 )
-scale = Vector2( -1.27175, 40.3272 )
+position = Vector2( 611.625, 327.445 )
+scale = Vector2( -0.992219, 18.0289 )
 
 [node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 547.518, 516.653 )
+position = Vector2( 683.502, 242.527 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 411.694, 361.24 )
+position = Vector2( 375, 272.743 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 333.091, 197.542 )
+position = Vector2( 451.807, 277.469 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 700.822, 196.586 )
+position = Vector2( 547.571, 270.102 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -74,7 +58,7 @@ playback_process_mode = 0
 [node name="HUD" parent="." instance=ExtResource( 9 )]
 script = ExtResource( 10 )
 
-[node name="Restart_Label" type="Label" parent="HUD"]
+[node name="RichTextLabel" type="Label" parent="HUD"]
 visible = false
 margin_left = -267.647
 margin_top = 7.36642
@@ -82,48 +66,5 @@ margin_right = 232.353
 margin_bottom = 39.3664
 rect_scale = Vector2( 3, 3 )
 text = "PRESS R TO RESTART"
-align = 1
-
-[node name="Load_Fake_Label" type="Label" parent="HUD"]
-visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "You died!
-Press Q 
-To load confetti into the enemy's clipazine
-
-Now, press R to restart!"
-align = 1
-
-[node name="Shoot_Label" type="Label" parent="HUD"]
-visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "Dang.
-You share a clipazine with the enemies,
-Left Click
-to shoot
-
-Press R to restart"
-align = 1
-
-[node name="Rack_Label" type="Label" parent="HUD"]
-visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "One last trick,
-you can eject the next round with
-Right Click
-
-Press R to restart"
 align = 1
 [connection signal="killed" from="player" to="." method="_on_player_killed"]

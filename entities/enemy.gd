@@ -64,5 +64,10 @@ func stop():
 	stopped = true;
 
 func hit():
-	queue_free()
+	$CollisionShape2D.queue_free()
+	$Gun.queue_free()
+	$Muzzle.queue_free()
+	$evil_icon.queue_free()
+	$sprite_dead.visible = true
+	stopped = true
 
