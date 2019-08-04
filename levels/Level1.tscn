@@ -252,7 +252,6 @@ Player = NodePath("../player")
 playback_process_mode = 0
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Restart_Label" type="Panel" parent="HUD"]
@@ -344,7 +343,7 @@ curve = SubResource( 1 )
 
 [node name="Enemy6PathFollow" type="PathFollow2D" parent="Enemy6Path"]
 position = Vector2( 639.084, -1200.87 )
-rotation = -0.006635
+rotation = -0.0065724
 
 [node name="Enemy12PathFollow" type="Path2D" parent="."]
 editor/display_folded = true
@@ -352,7 +351,7 @@ curve = SubResource( 2 )
 
 [node name="Enemy12PathFollow" type="PathFollow2D" parent="Enemy12PathFollow"]
 position = Vector2( 952.655, -743.158 )
-rotation = -0.00898856
+rotation = -0.00900442
 
 [node name="Enemy7Path" type="Path2D" parent="."]
 editor/display_folded = true
@@ -360,7 +359,7 @@ curve = SubResource( 3 )
 
 [node name="Enemy7PathFollow" type="PathFollow2D" parent="Enemy7Path"]
 position = Vector2( 403.254, -140.422 )
-rotation = 0.00138926
+rotation = 0.00138539
 
 [node name="Enemy8Path" type="Path2D" parent="."]
 editor/display_folded = true
@@ -371,6 +370,7 @@ position = Vector2( 904.661, 0.642822 )
 rotation = 3.14159
 
 [node name="Enemy16Path" type="Path2D" parent="."]
+editor/display_folded = true
 position = Vector2( -79.2808, 0 )
 curve = SubResource( 5 )
 
