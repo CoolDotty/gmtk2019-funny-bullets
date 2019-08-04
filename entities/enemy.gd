@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (PackedScene) var AmmoType
+#export (NodePath) var route_follower
 export var speed = 200
 
 onready var Casing = preload("res://Casing.tscn")
@@ -31,6 +32,9 @@ func _physics_process(delta):
 	
 	if walk_target && not at_position(walk_target):
 		move_to(walk_target)
+	
+	#if not walk_target and route_follower:
+	#	pass
 
 func at_position(target_pos):
 	var x_distance = target_pos.x - position.x

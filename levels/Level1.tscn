@@ -33,30 +33,30 @@ rotation = -3.14159
 scale = Vector2( 54.463, 1.496 )
 
 [node name="Wall3" parent="HorizontalWalls" instance=ExtResource( 6 )]
-position = Vector2( 415.28, -419.885 )
+position = Vector2( 439.024, -419.885 )
 rotation = -3.14159
-scale = Vector2( 11, 1.496 )
+scale = Vector2( 12, 1.496 )
 
 [node name="Wall4" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 513.83, 739.628 )
 scale = Vector2( 25.3581, -1.35323 )
 
 [node name="Wall7" parent="HorizontalWalls" instance=ExtResource( 6 )]
-position = Vector2( 1504.75, 150.478 )
+position = Vector2( 1493.95, 150.478 )
 rotation = -3.14159
-scale = Vector2( 8, 1.496 )
+scale = Vector2( 9, 1.496 )
 
 [node name="Wall9" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 1338.57, 744.607 )
 scale = Vector2( 26, -1.353 )
 
 [node name="Wall10" parent="HorizontalWalls" instance=ExtResource( 6 )]
-position = Vector2( 1098.66, -223.252 )
-scale = Vector2( 50, -1.353 )
+position = Vector2( 1079.23, -223.252 )
+scale = Vector2( 52, -1.353 )
 
 [node name="Wall11" parent="HorizontalWalls" instance=ExtResource( 6 )]
-position = Vector2( 694.698, 49.4709 )
-scale = Vector2( 40, -1.353 )
+position = Vector2( 729.234, 49.4709 )
+scale = Vector2( 43, -1.353 )
 
 [node name="Wall12" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 891.409, -945.678 )
@@ -95,7 +95,7 @@ rotation = 3.14159
 scale = Vector2( 1.272, 28 )
 
 [node name="Wall9" parent="VerticalWalls" instance=ExtResource( 6 )]
-position = Vector2( 1091.15, 235.086 )
+position = Vector2( 1149.43, 235.086 )
 rotation = 3.14159
 scale = Vector2( 1.272, 20 )
 
@@ -110,9 +110,6 @@ position = Vector2( 547.518, 516.653 )
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1170.45, 662.891 )
 
-[node name="Enemy3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1162.17, 80.9529 )
-
 [node name="Enemy9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 409, -688.953 )
 z_index = 0
@@ -122,11 +119,11 @@ position = Vector2( 409, -845.166 )
 z_index = 0
 
 [node name="Enemy7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 832.031, -161.012 )
+position = Vector2( 683.096, -156.695 )
 z_index = 0
 
 [node name="Enemy6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1164.02, 227.152 )
+position = Vector2( 1222.3, 227.152 )
 
 [node name="Enemy10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 410.851, -542.754 )
@@ -137,18 +134,18 @@ position = Vector2( 1242.69, -571.994 )
 z_index = 0
 
 [node name="Enemy8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 969.218, -20.9646 )
+position = Vector2( 820.283, -16.6476 )
 z_index = 0
 
 [node name="Enemy4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1523.95, 98.6056 )
+position = Vector2( 1517.47, 46.8023 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1513.32, -84.7036 )
+position = Vector2( 1502.53, -73.9111 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.2, 1.2 )
+zoom = Vector2( 1.4, 1.4 )
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 script = ExtResource( 8 )
