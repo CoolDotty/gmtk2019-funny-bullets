@@ -255,66 +255,82 @@ playback_process_mode = 0
 editor/display_folded = true
 script = ExtResource( 10 )
 
-[node name="Restart_Label" type="Label" parent="HUD"]
-visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
+[node name="Restart_Label" type="Panel" parent="HUD"]
+margin_left = 385.0
+margin_top = 1.0
+margin_right = 653.0
+margin_bottom = 34.0
+
+[node name="text" type="Label" parent="HUD/Restart_Label"]
+margin_left = 1.71857
+margin_top = 5.66541
+margin_right = 129.719
+margin_bottom = 19.6654
+rect_scale = Vector2( 2, 2 )
 text = "PRESS R TO RESTART"
 align = 1
 
-[node name="Load_Fake_Label" type="Label" parent="HUD"]
+[node name="IntroLabel" type="Panel" parent="HUD"]
 visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "You died!
-Press Q 
-To load confetti into the enemy's clipazine
+margin_left = 302.291
+margin_top = 1.0
+margin_right = 701.291
+margin_bottom = 34.0
 
-Now, press R to restart!"
+[node name="text" type="Label" parent="HUD/IntroLabel"]
+margin_left = 0.718628
+margin_top = 1.33459
+margin_right = 197.719
+margin_bottom = 33.3346
+rect_scale = Vector2( 2, 2 )
+text = "[WASD] to move. [M1] to shoot"
 align = 1
 
-[node name="Shoot_Label" type="Label" parent="HUD"]
+[node name="ReloadLabel" type="Panel" parent="HUD"]
 visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "Dang.
-You share a clipazine with the enemies,
-Left Click
-to shoot
+margin_left = 346.319
+margin_top = 1.0
+margin_right = 672.319
+margin_bottom = 66.0
 
-Press R to restart"
+[node name="text" type="Label" parent="HUD/ReloadLabel"]
+margin_left = -0.283234
+margin_top = 0.667297
+margin_right = 158.717
+margin_bottom = 99.6673
+rect_scale = Vector2( 2, 2 )
+text = "There is only 1 magazine
+[Q] loads a blank"
 align = 1
 
-[node name="Rack_Label" type="Label" parent="HUD"]
+[node name="RackLabel" type="Panel" parent="HUD"]
 visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
-text = "One last trick,
-you can eject the next round with
-Right Click
+margin_left = 303.962
+margin_top = 1.6673
+margin_right = 720.962
+margin_bottom = 32.6673
 
-Press R to restart"
+[node name="text" type="Label" parent="HUD/RackLabel"]
+margin_left = 5.43542
+margin_top = 1.33459
+margin_right = 211.435
+margin_bottom = 15.3346
+rect_scale = Vector2( 2, 2 )
+text = "[M2] Ejects the chambered shell"
 align = 1
 
-[node name="Win_Label" type="Label" parent="HUD"]
+[node name="WinLabel" type="Panel" parent="HUD"]
 visible = false
-margin_left = -267.647
-margin_top = 7.36642
-margin_right = 232.353
-margin_bottom = 39.3664
-rect_scale = Vector2( 3, 3 )
+margin_left = 374.215
+margin_top = 2.00189
+margin_right = 660.215
+margin_bottom = 139.002
+
+[node name="text" type="Label" parent="HUD/WinLabel"]
+margin_left = 2.19208
+margin_right = 147.192
+margin_bottom = 65.0
+rect_scale = Vector2( 2, 2 )
 text = "CONGRATULATIONS!
 YOU WON!
 
