@@ -8,9 +8,6 @@ export (AudioStream) var sound_reload
 var enemy_count = 0
 var clipazine = []
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	if Input.is_action_pressed('ui_restart'):
 		get_tree().reload_current_scene()
