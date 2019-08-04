@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://levels/level.gd" type="Script" id=1]
 [ext_resource path="res://sounds/shotgun_load.wav" type="AudioStream" id=2]
@@ -13,7 +13,22 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1076.2, -769.988, 0, 0, 0, 0, 1077.22, -317.532, 0, 0, 0, 0, 952.201, -316.952, 0, 0, 0, 0, 952.527, -315.248, 0, 0, 0, 0, 952.527, -317.398, 0, 0, 0, 0, 951.207, -770.037, 0, 0, 0, 0, 1076.2, -769.988 )
+"points": PoolVector2Array( 0, 0, 0, 0, 639.084, -1200.87, 0, 0, 0, 0, 712.236, -1201.35, 0, 0, 0, 0, 712.95, -1012.3, 0, 0, 0, 0, 869.882, -1012.3, 0, 0, 0, 0, 870.304, -944.549, 0, 0, 0, 0, 639.788, -945.523, 0, 0, 0, 0, 640.06, -1198.43 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 952.655, -743.158, 0, 0, 0, 0, 1069.5, -744.21, 0, 0, 0, 0, 1068.44, -307.367, 0, 0, 0, 0, 953.281, -307.554, 0, 0, 0, 0, 952.655, -743.158 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 403.254, -140.422, 0, 0, 0, 0, 906.757, -139.723, 0, 0, 0, 0, 653.26, -139.723, 0, 0, 0, 0, 403.254, -140.422 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 904.661, 0.642822, 0, 0, 0, 0, 401.858, 0.642822, 0, 0, 0, 0, 647.673, 1.34116, 0, 0, 0, 0, 904.661, 0.642822 )
 }
 
 [node name="Level1" type="Node2D"]
@@ -27,6 +42,7 @@ Lethal = ExtResource( 4 )
 Fake = ExtResource( 5 )
 
 [node name="HorizontalWalls" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Wall" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 807.442, 578.051 )
@@ -68,6 +84,7 @@ position = Vector2( 891.409, -945.678 )
 scale = Vector2( 60, -1.353 )
 
 [node name="VerticalWalls" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Wall6" parent="VerticalWalls" instance=ExtResource( 6 )]
 position = Vector2( 750.379, 656.541 )
@@ -126,22 +143,27 @@ z_index = 0
 [node name="Enemy7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 683.096, -156.695 )
 z_index = 0
+PathToRouteFollower = NodePath("../Enemy7Path/Enemy7PathFollow")
 
 [node name="Enemy6" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 1222.3, 227.152 )
+PathToRouteFollower = NodePath("../Enemy6Path/Enemy6PathFollow")
 
 [node name="Enemy10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 410.851, -542.754 )
 z_index = 0
 
 [node name="Enemy12" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 1003.67, -583.952 )
 z_index = 0
-PathToRouteFollower = NodePath("../Enemy12Path/Enemy12PathFollow")
+PathToRouteFollower = NodePath("../Enemy12PathFollow/Enemy12PathFollow")
 
 [node name="Enemy8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 820.283, -16.6476 )
 z_index = 0
+PathToRouteFollower = NodePath("../Enemy8Path/Enemy8PathFollow")
 
 [node name="Enemy4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1517.47, 46.8023 )
@@ -150,6 +172,7 @@ position = Vector2( 1517.47, 46.8023 )
 position = Vector2( 1502.53, -73.9111 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 current = true
 zoom = Vector2( 1.3, 1.3 )
 drag_margin_h_enabled = false
@@ -161,6 +184,7 @@ Player = NodePath("../player")
 playback_process_mode = 0
 
 [node name="HUD" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Restart_Label" type="Label" parent="HUD"]
@@ -229,10 +253,28 @@ YOU WON!
 (press R to restart)"
 align = 1
 
-[node name="Enemy12Path" type="Path2D" parent="."]
+[node name="Enemy6Path" type="Path2D" parent="."]
+position = Vector2( 570.738, 1307.36 )
 curve = SubResource( 1 )
 
-[node name="Enemy12PathFollow" type="PathFollow2D" parent="Enemy12Path"]
-position = Vector2( 1076.2, -769.988 )
-rotation = 1.56856
+[node name="Enemy6PathFollow" type="PathFollow2D" parent="Enemy6Path"]
+position = Vector2( 639.084, -1200.87 )
+rotation = -0.006635
+
+[node name="Enemy12PathFollow" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="Enemy12PathFollow" type="PathFollow2D" parent="Enemy12PathFollow"]
+position = Vector2( 952.655, -743.158 )
+rotation = -0.00898856
+
+[node name="Enemy7Path" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="Enemy7PathFollow" type="PathFollow2D" parent="Enemy7Path"]
+
+[node name="Enemy8Path" type="Path2D" parent="."]
+curve = SubResource( 4 )
+
+[node name="Enemy8PathFollow" type="PathFollow2D" parent="Enemy8Path"]
 [connection signal="killed" from="player" to="." method="_on_player_killed"]
