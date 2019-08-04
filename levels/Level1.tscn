@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/level.gd" type="Script" id=1]
 [ext_resource path="res://sounds/shotgun_load.wav" type="AudioStream" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://levels/Chasecam.gd" type="Script" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 [ext_resource path="res://HUD.gd" type="Script" id=10]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1076.2, -769.988, 0, 0, 0, 0, 1077.22, -317.532, 0, 0, 0, 0, 952.201, -316.952, 0, 0, 0, 0, 952.527, -315.248, 0, 0, 0, 0, 952.527, -317.398, 0, 0, 0, 0, 951.207, -770.037, 0, 0, 0, 0, 1076.2, -769.988 )
+}
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -85,12 +90,12 @@ rotation = 3.14159
 scale = Vector2( 1.272, 50 )
 
 [node name="Wall11" parent="VerticalWalls" instance=ExtResource( 6 )]
-position = Vector2( 1120.44, -570.72 )
+position = Vector2( 881.419, -582.678 )
 rotation = 3.14159
 scale = Vector2( 1.272, 17 )
 
 [node name="Wall12" parent="VerticalWalls" instance=ExtResource( 6 )]
-position = Vector2( 1373.46, -497.588 )
+position = Vector2( 1134.44, -509.546 )
 rotation = 3.14159
 scale = Vector2( 1.272, 28 )
 
@@ -130,8 +135,9 @@ position = Vector2( 410.851, -542.754 )
 z_index = 0
 
 [node name="Enemy12" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1242.69, -571.994 )
+position = Vector2( 1003.67, -583.952 )
 z_index = 0
+PathToRouteFollower = NodePath("../Enemy12Path/Enemy12PathFollow")
 
 [node name="Enemy8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 820.283, -16.6476 )
@@ -145,7 +151,7 @@ position = Vector2( 1502.53, -73.9111 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.4, 1.4 )
+zoom = Vector2( 1.3, 1.3 )
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 script = ExtResource( 8 )
@@ -222,4 +228,11 @@ YOU WON!
 
 (press R to restart)"
 align = 1
+
+[node name="Enemy12Path" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Enemy12PathFollow" type="PathFollow2D" parent="Enemy12Path"]
+position = Vector2( 1076.2, -769.988 )
+rotation = 1.56808
 [connection signal="killed" from="player" to="." method="_on_player_killed"]

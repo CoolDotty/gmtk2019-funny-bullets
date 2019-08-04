@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
 export (PackedScene) var AmmoType
-export var speed = 200
+export (NodePath) var PathToRouteFollower
+export var pursue_speed = 200
+export var patrol_speed = 120
 
 onready var Casing = preload("res://Casing.tscn")
 
 onready var Player = $"../player"
 onready var clipazine = get_parent()
 onready var Gun = $Gun
+var route_follower
 
 var stopped = false;
 
@@ -17,6 +20,8 @@ var walk_target = null
 func _ready():
 	Gun.clipazine = clipazine
 	get_parent().enemy_count += 1
+	if PathToRouteFollower:
+		route_follower = get_node(PathToRouteFollower)
 
 func _physics_process(delta):
 	if stopped:
@@ -33,8 +38,11 @@ func _physics_process(delta):
 	if walk_target && not at_position(walk_target):
 		move_to(walk_target)
 	
-	#if not walk_target and route_follower:
-	#	pass
+	if not walk_target and route_follower:
+		route_follower.set_offset(route_follower.get_offset() + (patrol_speed * delta))
+		
+		rotation = (route_follower.global_position - global_position).angle()
+		global_position = route_follower.global_position
 
 func at_position(target_pos):
 	var x_distance = target_pos.x - position.x
@@ -46,7 +54,7 @@ func at_position(target_pos):
 func move_to(target_pos):
 	var dir = target_pos - global_position
 	rotation = dir.angle()
-	var velocity = Vector2(speed, 0).rotated(rotation)
+	var velocity = Vector2(pursue_speed, 0).rotated(rotation)
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 
