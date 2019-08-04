@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://levels/level.gd" type="Script" id=1]
 [ext_resource path="res://sounds/shotgun_load.wav" type="AudioStream" id=2]
@@ -31,22 +31,46 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 904.661, 0.642822, 0, 0, 0, 0, 401.858, 0.642822, 0, 0, 0, 0, 647.673, 1.34116, 0, 0, 0, 0, 904.661, 0.642822 )
 }
 
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1520.95, -1402.6, 0, 0, 0, 0, 1520.87, -1140.74, 0, 0, 0, 0, 1874.18, -1142.04, 0, 0, 0, 0, 1948.25, -1212.67, 0, 0, 0, 0, 1520.95, -1402.6 )
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 sound_reload = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 577.065, 655.029 )
+position = Vector2( 633.921, 656.311 )
 scale = Vector2( 1.01408, 1 )
 Lethal = ExtResource( 4 )
 Fake = ExtResource( 5 )
 
 [node name="HorizontalWalls" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Wall" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 807.442, 578.051 )
 scale = Vector2( 38, -1.353 )
+
+[node name="Wall5" parent="HorizontalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1676.8, -774.742 )
+scale = Vector2( 55, -1.353 )
+
+[node name="Wall14" parent="HorizontalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1757.67, -1599.29 )
+scale = Vector2( 47, -1.353 )
+
+[node name="Wall6" parent="HorizontalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1803.44, -946.392 )
+scale = Vector2( 16, -1.353 )
+
+[node name="Wall8" parent="HorizontalWalls" instance=ExtResource( 6 )]
+position = Vector2( 2065.46, -1197.23 )
+scale = Vector2( 13, -1.353 )
+
+[node name="Wall13" parent="HorizontalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1641.84, -1199.13 )
+scale = Vector2( 15, -1.353 )
 
 [node name="Wall2" parent="HorizontalWalls" instance=ExtResource( 6 )]
 position = Vector2( 810.922, 432.121 )
@@ -80,16 +104,35 @@ position = Vector2( 729.234, 49.4709 )
 scale = Vector2( 43, -1.353 )
 
 [node name="Wall12" parent="HorizontalWalls" instance=ExtResource( 6 )]
-position = Vector2( 891.409, -945.678 )
-scale = Vector2( 60, -1.353 )
+position = Vector2( 908.593, -947.11 )
+scale = Vector2( 62, -1.353 )
 
 [node name="VerticalWalls" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Wall6" parent="VerticalWalls" instance=ExtResource( 6 )]
 position = Vector2( 750.379, 656.541 )
 rotation = 3.14159
 scale = Vector2( 1.272, -9 )
+
+[node name="Wall13" parent="VerticalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1298.55, -1274.74 )
+rotation = 3.14159
+scale = Vector2( 1.272, 34 )
+
+[node name="Wall16" parent="VerticalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1506.01, -1261.6 )
+rotation = 3.14159
+scale = Vector2( 1.272, 7 )
+
+[node name="Wall15" parent="VerticalWalls" instance=ExtResource( 6 )]
+position = Vector2( 2207.96, -1191.21 )
+rotation = 3.14159
+scale = Vector2( 1.272, 42 )
+
+[node name="Wall14" parent="VerticalWalls" instance=ExtResource( 6 )]
+position = Vector2( 1949.95, -1019.05 )
+rotation = 3.14159
+scale = Vector2( 1.272, 8 )
 
 [node name="Wall5" parent="VerticalWalls" instance=ExtResource( 6 )]
 position = Vector2( 275.831, 576.964 )
@@ -140,6 +183,31 @@ z_index = 0
 position = Vector2( 409, -845.166 )
 z_index = 0
 
+[node name="Enemy13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1335.45, -1001.25 )
+z_index = 0
+
+[node name="Enemy18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1540.23, -1251.85 )
+z_index = 0
+
+[node name="Enemy14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1863.3, -1000.64 )
+z_index = 0
+
+[node name="Enemy15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2119.66, -1265.2 )
+z_index = 0
+
+[node name="Enemy17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1861.26, -1482.49 )
+z_index = 0
+
+[node name="Enemy16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1656.46, -1356.23 )
+z_index = 0
+PathToRouteFollower = NodePath("../Enemy16Path/Enemy16PathFollow")
+
 [node name="Enemy7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 683.096, -156.695 )
 z_index = 0
@@ -174,7 +242,7 @@ position = Vector2( 1502.53, -73.9111 )
 [node name="Camera2D" type="Camera2D" parent="."]
 editor/display_folded = true
 current = true
-zoom = Vector2( 1.3, 1.3 )
+zoom = Vector2( 1.4, 1.4 )
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 script = ExtResource( 8 )
@@ -254,6 +322,7 @@ YOU WON!
 align = 1
 
 [node name="Enemy6Path" type="Path2D" parent="."]
+editor/display_folded = true
 position = Vector2( 570.738, 1307.36 )
 curve = SubResource( 1 )
 
@@ -262,6 +331,7 @@ position = Vector2( 639.084, -1200.87 )
 rotation = -0.006635
 
 [node name="Enemy12PathFollow" type="Path2D" parent="."]
+editor/display_folded = true
 curve = SubResource( 2 )
 
 [node name="Enemy12PathFollow" type="PathFollow2D" parent="Enemy12PathFollow"]
@@ -269,12 +339,26 @@ position = Vector2( 952.655, -743.158 )
 rotation = -0.00898856
 
 [node name="Enemy7Path" type="Path2D" parent="."]
+editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="Enemy7PathFollow" type="PathFollow2D" parent="Enemy7Path"]
+position = Vector2( 403.254, -140.422 )
+rotation = 0.00138926
 
 [node name="Enemy8Path" type="Path2D" parent="."]
+editor/display_folded = true
 curve = SubResource( 4 )
 
 [node name="Enemy8PathFollow" type="PathFollow2D" parent="Enemy8Path"]
+position = Vector2( 904.661, 0.642822 )
+rotation = 3.14159
+
+[node name="Enemy16Path" type="Path2D" parent="."]
+position = Vector2( -79.2808, 0 )
+curve = SubResource( 5 )
+
+[node name="Enemy16PathFollow" type="PathFollow2D" parent="Enemy16Path"]
+position = Vector2( 1520.95, -1402.6 )
+rotation = 1.57108
 [connection signal="killed" from="player" to="." method="_on_player_killed"]
