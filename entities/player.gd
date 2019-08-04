@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 signal killed
 
+var crosshair = load("res://crosshair.png")
+
 export (PackedScene) var Lethal
 export (PackedScene) var Fake
 
@@ -13,6 +15,7 @@ onready var Gun = $Gun
 onready var dead = false
 
 func _ready():
+	Input.set_custom_mouse_cursor(crosshair)
 	Gun.clipazine = clipazine
 
 func get_input():
