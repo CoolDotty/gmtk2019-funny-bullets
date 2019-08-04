@@ -6,7 +6,8 @@
 [ext_resource path="res://entities/baddude.png" type="Texture" id=4]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( -4, -6, 2.5, -6, 10.5, 6, 2.5, 6, 1, 9, -4, 9 )
 
 [node name="Enemy" type="KinematicBody2D"]
 z_index = -1
@@ -22,13 +23,14 @@ position = Vector2( 30.9938, -0.407806 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 11.8266, 0.815628 )
+position = Vector2( 6.72893, -3.67033 )
 scale = Vector2( 4.00097, 3.99505 )
 shape = SubResource( 1 )
 
 [node name="Gun" parent="." instance=ExtResource( 5 )]
 MuzzlePath = NodePath("../Muzzle")
-reload_delay = 0.5
+shoot_delay = 0.7
+reload_delay = 0.2
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 84.7781, 16.7204 )
