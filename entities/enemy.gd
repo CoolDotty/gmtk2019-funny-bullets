@@ -3,6 +3,8 @@ extends KinematicBody2D
 export (PackedScene) var AmmoType
 export var speed = 200
 
+onready var Casing = preload("res://Casing.tscn")
+
 onready var Player = $"../player"
 onready var clipazine = get_parent()
 onready var Gun = $Gun
@@ -54,8 +56,13 @@ func shoot():
 	if gun_has_my_ammo:
 		var bullet = Gun.next_shot()
 		var shoot = Gun.shoot()
-		if (shoot == Gun.SHOT or shoot == Gun.MAGAZINE_EMPTY):
+		if (typeof(shoot) == TYPE_OBJECT or shoot == Gun.MAGAZINE_EMPTY):
 			gun_has_my_ammo = false
+		if typeof(shoot) == TYPE_OBJECT:
+			var tex = shoot.get_node("HUDIcon").texture
+			var c = Casing.instance()
+			c.create(tex, get_position());
+			get_parent().add_child(c)
 	else:
 		if Gun.reload(AmmoType) == Gun.RELOADED:
 			gun_has_my_ammo = true

@@ -24,8 +24,9 @@ func shoot():
 			chamber.start(muzzle.global_position, get_parent().rotation)
 			clipazine.add_child(chamber)
 			
+			var c = chamber
 			chamber = null
-			return SHOT
+			return c
 		else:
 			return MAGAZINE_EMPTY
 	else:
@@ -43,7 +44,7 @@ func reload(ammo):
 func rack():
 	var out = clipazine.pop(self)
 	if out:
-		out.queue_free()
+		return out
 
 func next_shot():
 	return clipazine.peek()

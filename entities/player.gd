@@ -5,6 +5,8 @@ signal killed
 export (PackedScene) var Lethal
 export (PackedScene) var Fake
 
+onready var Casing = preload("res://Casing.tscn")
+
 const speed = 500;
 onready var clipazine = get_parent()
 onready var Gun = $Gun
@@ -17,10 +19,20 @@ func get_input():
 	var velocity = Vector2()
 	
 	if Input.is_action_just_pressed('ui_fire'):
-		Gun.shoot()
+		var out = Gun.shoot()
+		if typeof(out) == TYPE_OBJECT:
+			var tex = out.get_node("HUDIcon").texture
+			var c = Casing.instance()
+			c.create(tex, get_position());
+			get_parent().add_child(c)
 	
 	if Input.is_action_just_pressed("ui_rack"):
-		Gun.rack()
+		var out = Gun.rack()
+		if out:
+			var tex = out.get_node("HUDIcon").texture
+			var c = Casing.instance()
+			c.create(tex, get_position());
+			get_parent().add_child(c)
 		$SoundRack.play()
 	
 	if Input.is_action_just_pressed('ui_load_fake'):
