@@ -5,7 +5,8 @@ signal pop_bullet
 
 export (AudioStream) var sound_reload
 
-var clipazine = [];
+var enemy_count = 0
+var clipazine = []
 
 func _ready():
 	pass
@@ -39,10 +40,25 @@ func push(bullet_instance): # instance of scene
 func empty():
 	return clipazine.empty()
 
+func check_win():
+	if enemy_count <= 0:
+		win()
+
+func win():
+	stop_children()
+	call_on_all_children("win")
+
 func game_over():
+	stop_children()
+	call_on_all_children("lose")
+
+func stop_children():
+	call_on_all_children("stop")
+
+func call_on_all_children(fn):
 	for c in get_children():
-		if c.has_method("stop"):
-			c.stop()
+		if c.has_method(fn):
+			funcref(c, fn).call_func()
 
 func _on_player_killed():
 	game_over()

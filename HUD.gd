@@ -4,7 +4,7 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-func stop():
+func lose():
 	if Global.death_count == 1:
 		$Load_Fake_Label.visible = true
 	elif Global.death_count == 2:
@@ -13,3 +13,6 @@ func stop():
 		$Rack_Label.visible = true
 	else:
 		$Restart_Label.visible = true
+
+func win():
+	$Win_Label.visible = true

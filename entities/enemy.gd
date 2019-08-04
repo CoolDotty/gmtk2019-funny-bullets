@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export (PackedScene) var AmmoType
-#export (NodePath) var route_follower
 export var speed = 200
 
 onready var Casing = preload("res://Casing.tscn")
@@ -17,6 +16,7 @@ var walk_target = null
 
 func _ready():
 	Gun.clipazine = clipazine
+	get_parent().enemy_count += 1
 
 func _physics_process(delta):
 	if stopped:
@@ -81,4 +81,5 @@ func hit():
 	$evil_icon.queue_free()
 	$sprite_dead.visible = true
 	stopped = true
-
+	get_parent().enemy_count -= 1
+	get_parent().check_win()
