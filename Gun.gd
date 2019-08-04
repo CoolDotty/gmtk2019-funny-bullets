@@ -34,7 +34,7 @@ func shoot():
 
 func reload(ammo):
 	if timer.time_left == 0:
-		clipazine.push(ammo.instance())
+		clipazine.push(ammo.instance(), get_parent())
 		timer.set_wait_time(reload_delay)
 		timer.start()
 		return RELOADED

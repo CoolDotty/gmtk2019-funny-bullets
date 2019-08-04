@@ -36,7 +36,7 @@ func get_input():
 		$SoundRack.play()
 	
 	if Input.is_action_just_pressed('ui_load_fake'):
-		clipazine.push(Fake.instance())
+		clipazine.push(Fake.instance(), self)
 	
 	if Input.is_action_pressed('ui_right'):
 		velocity.x += 1

@@ -26,8 +26,8 @@ func peek():
 		return clipazine[0]
 	return null
 
-func push(bullet_instance): # instance of scene
-	emit_signal("push_bullet", bullet_instance)
+func push(bullet_instance, who): # instance of scene
+	emit_signal("push_bullet", bullet_instance, who.get_global_transform_with_canvas())
 	clipazine.push_back(bullet_instance)
 	
 	var player = AudioStreamPlayer.new()
