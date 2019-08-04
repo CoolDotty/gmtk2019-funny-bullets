@@ -29,7 +29,7 @@ func push(bullet_instance): # instance of scene
 	emit_signal("push_bullet", bullet_instance)
 	clipazine.push_back(bullet_instance)
 	
-	var player = AudioStreamPlayer2D.new()
+	var player = AudioStreamPlayer.new()
 	player.stream = sound_reload
 	add_child(player)
 	player.play()

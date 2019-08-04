@@ -49,6 +49,9 @@ func get_input():
 	return velocity.normalized() * speed
 
 func _physics_process(delta):
+	if dead:
+		return
+	
 	var velocity = get_input()
 	var dir = get_global_mouse_position() - global_position
 	rotation = dir.angle()
@@ -57,9 +60,11 @@ func _physics_process(delta):
 func hit():
 	if not dead:
 		dead = true
-		hide()  # Player disappears after being hit.
 		$CollisionShape2D.set_deferred("disabled", true)
 		Global.death_count += 1
 		# spawn dead guy
 		emit_signal("killed")
-		queue_free()
+		
+		$SpriteGodude.visible = false
+		$SpriteDead.visible = true
+		
