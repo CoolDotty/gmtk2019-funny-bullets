@@ -1,0 +1,53 @@
+only 1 in the chamber rifle / shotgun
+
+onyl 1 life
+
+only 1 cooldown
+
+only 1 enemy where the environemnt works against you
+
+hotline miami but each weapon can only kill once
+
+platformer where you only jump once
+
+only 1 gun (everyone has the same one)
+	change on fly (in sync)?
+	item ideas:
+		shield
+		sword
+		gun
+	same ammo
+	
+only 1 player on a team
+	
+
+only 1 player race
+	time trial
+
+only 1 key
+
+only 1 character (multiplayer)
+	Use the same keyboard?
+
+gun only used once, loot boxes give more guns
+
+only 1 [resource] (how do you choose to spend it?)
+	money
+
+only 1 turn
+	local multiplayer?
+	puzzle?
+	simultaneous (programmed) actions, or one after another?
+	(assuming 1 after another) how to make fair?
+		first player has secret piece/card/whatever?
+		Turns on a timer?
+
+
+game
+	!on sight - shoot, if not expected ammo, then reload immediately
+	?on sight - attempt to shoot, never loads
+	!enemies will move, likely to spot they last saw you at
+	!bullets are a queue
+	!only load confetti shot\
+	?camera support
+

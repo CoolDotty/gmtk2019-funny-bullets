@@ -91,4 +91,5 @@ ui_restart={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.203922, 0.121569, 0.2, 1 )
 environment/default_environment="res://default_env.tres"
