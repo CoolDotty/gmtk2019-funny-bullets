@@ -257,7 +257,7 @@ script = ExtResource( 10 )
 [node name="Stopwatch" type="Panel" parent="HUD"]
 margin_left = -1.0
 margin_top = 1.0
-margin_right = 99.0
+margin_right = 139.0
 margin_bottom = 30.0
 
 [node name="text" type="Label" parent="HUD/Stopwatch"]
@@ -266,7 +266,7 @@ margin_top = 2.0
 margin_right = 72.0
 margin_bottom = 16.0
 rect_scale = Vector2( 2, 2 )
-text = "00:00"
+text = "00:00:000"
 
 [node name="Restart_Label" type="Panel" parent="HUD"]
 margin_left = 385.0
